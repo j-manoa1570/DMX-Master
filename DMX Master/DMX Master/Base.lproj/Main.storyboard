@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DMX_Master" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mAh-KQ-rLN" userLabel="Channel Values">
+                                <rect key="frame" x="20" y="95" width="984" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vw-T2-pJq" userLabel="Channel 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdU-al-u7n" userLabel="Channel 2">
+                                        <rect key="frame" x="62" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyQ-HR-JVx" userLabel="Channel 3">
+                                        <rect key="frame" x="124" y="0.0" width="55.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUk-zj-G56" userLabel="Channel 4">
+                                        <rect key="frame" x="185.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q20-7V-6ay" userLabel="Channel 5">
+                                        <rect key="frame" x="247.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWS-7Y-HtV" userLabel="Channel 6">
+                                        <rect key="frame" x="309.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5Y-gY-96z" userLabel="Channel 7">
+                                        <rect key="frame" x="371.5" y="0.0" width="55.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVu-uJ-OrX" userLabel="Channel 8">
+                                        <rect key="frame" x="433" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gu0-BC-vzq" userLabel="Channel 9">
+                                        <rect key="frame" x="495" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHU-96-Usj" userLabel="Channel 10">
+                                        <rect key="frame" x="557" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqk-ze-N2Y" userLabel="Channel 11">
+                                        <rect key="frame" x="619" y="0.0" width="55.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GQ-vm-Mal" userLabel="Channel 12">
+                                        <rect key="frame" x="680.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFw-bR-WfX" userLabel="Channel 13">
+                                        <rect key="frame" x="742.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-hi-AeD" userLabel="Channel 14">
+                                        <rect key="frame" x="804.5" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdC-JP-GNJ" userLabel="Channel 15">
+                                        <rect key="frame" x="866.5" y="0.0" width="55.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-WA-jM7" userLabel="Channel 16">
+                                        <rect key="frame" x="928" y="0.0" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="240-bi-0BW" userLabel="Scene Selection">
+                                <rect key="frame" x="20" y="44" width="593" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51l-uV-uQR">
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCK-KW-976">
+                                        <rect key="frame" x="67" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE8-RS-Rhi">
+                                        <rect key="frame" x="134" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zn-Ch-cXU">
+                                        <rect key="frame" x="201" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 4"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7n-9M-avi">
+                                        <rect key="frame" x="268" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 5"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFK-YN-feI">
+                                        <rect key="frame" x="335" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 6"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-yE-ZZM">
+                                        <rect key="frame" x="402" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 7"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-hu-C7t">
+                                        <rect key="frame" x="469" y="0.0" width="57" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.046545039429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scene 8"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-tS-J55">
+                                        <rect key="frame" x="536" y="0.0" width="57" height="30"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oY0-QY-AAI">
+                                <rect key="frame" x="944" y="44" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Blackout"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="889-bb-lTj" userLabel="Channel 1 Slider">
+                                <rect key="frame" x="-203" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="gvU-dA-wG7" userLabel="Channel 2 Slider">
+                                <rect key="frame" x="-141" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="31" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="YyR-Ka-GD1" userLabel="Channel 3 Slider">
+                                <rect key="frame" x="-80" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="47" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-6E-FYH" userLabel="Channel 4 Slider">
+                                <rect key="frame" x="-17" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="63" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-zb-jKU" userLabel="Channel 5 Slider">
+                                <rect key="frame" x="45" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="79" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="r8U-QQ-5Fs" userLabel="Channel 6 Slider">
+                                <rect key="frame" x="106" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="95" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Uy2-13-afs" userLabel="Channel 7 Slider">
+                                <rect key="frame" x="168" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="111" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="iQH-0Z-6ez" userLabel="Channel 8 Slider">
+                                <rect key="frame" x="231" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="127" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="vsR-JP-KLN" userLabel="Channel 9 Slider">
+                                <rect key="frame" x="292" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="143" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-KR-0bd" userLabel="Channel 10 Slider">
+                                <rect key="frame" x="354" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="159" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="4Dk-Hu-BPM" userLabel="Channel 11 Slider">
+                                <rect key="frame" x="416" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="175" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-SZ-svZ" userLabel="Channel 12 Slider">
+                                <rect key="frame" x="478" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="191" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-KI-xdQ" userLabel="Channel 13 Slider">
+                                <rect key="frame" x="539" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="207" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="3gY-eg-WSS" userLabel="Channel 14 Slider">
+                                <rect key="frame" x="602" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="223" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Ixn-KF-C9T" userLabel="Channel 15 Slider">
+                                <rect key="frame" x="664" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="239" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="kGL-zV-a6v" userLabel="Channel 16 Slider">
+                                <rect key="frame" x="723" y="396" width="504" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="240-bi-0BW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="9vT-gC-EW2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mAh-KQ-rLN" secondAttribute="trailing" constant="20" id="Gj7-O2-AG7"/>
+                            <constraint firstItem="mAh-KQ-rLN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="HcO-5h-xW5"/>
+                            <constraint firstItem="oY0-QY-AAI" firstAttribute="leading" secondItem="240-bi-0BW" secondAttribute="trailing" constant="50" id="Hzq-U0-hbh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oY0-QY-AAI" secondAttribute="trailing" constant="20" id="IkL-Sr-iE2"/>
+                            <constraint firstItem="mAh-KQ-rLN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Z60-Na-OXY"/>
+                            <constraint firstItem="240-bi-0BW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fkC-Z4-6EP"/>
+                            <constraint firstItem="oY0-QY-AAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="rnX-cK-1Ba"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="blackoutSelection" destination="oY0-QY-AAI" id="Oqw-fD-OBu"/>
+                        <outlet property="saveButtonOnOff" destination="EvT-tS-J55" id="6ko-Hu-JrL"/>
+                        <outletCollection property="scceneSelection" destination="zCK-KW-976" collectionClass="NSMutableArray" id="4Tp-0V-KKb"/>
+                        <outletCollection property="channelSlidersCollection" destination="889-bb-lTj" collectionClass="NSMutableArray" id="TVa-8B-8ei"/>
+                        <outletCollection property="channelSlidersCollection" destination="gvU-dA-wG7" collectionClass="NSMutableArray" id="rCZ-B3-ISA"/>
+                        <outletCollection property="channelSlidersCollection" destination="YyR-Ka-GD1" collectionClass="NSMutableArray" id="h1I-Xr-adp"/>
+                        <outletCollection property="channelSlidersCollection" destination="pTk-6E-FYH" collectionClass="NSMutableArray" id="DQE-Ya-Pyu"/>
+                        <outletCollection property="channelSlidersCollection" destination="ydI-zb-jKU" collectionClass="NSMutableArray" id="kVs-8G-nN4"/>
+                        <outletCollection property="scceneSelection" destination="51l-uV-uQR" collectionClass="NSMutableArray" id="tq7-3y-eed"/>
+                        <outletCollection property="scceneSelection" destination="VE8-RS-Rhi" collectionClass="NSMutableArray" id="gkk-ml-vc4"/>
+                        <outletCollection property="scceneSelection" destination="7zn-Ch-cXU" collectionClass="NSMutableArray" id="DDa-Sl-drg"/>
+                        <outletCollection property="scceneSelection" destination="i7n-9M-avi" collectionClass="NSMutableArray" id="R8h-FA-KXa"/>
+                        <outletCollection property="scceneSelection" destination="tFK-YN-feI" collectionClass="NSMutableArray" id="Pa9-Wq-ZSi"/>
+                        <outletCollection property="scceneSelection" destination="EpG-yE-ZZM" collectionClass="NSMutableArray" id="ap2-Ig-cfU"/>
+                        <outletCollection property="scceneSelection" destination="nNf-hu-C7t" collectionClass="NSMutableArray" id="mpd-cr-juq"/>
+                        <outletCollection property="channelSlidersCollection" destination="r8U-QQ-5Fs" collectionClass="NSMutableArray" id="1r3-gx-4w5"/>
+                        <outletCollection property="channelSlidersCollection" destination="Uy2-13-afs" collectionClass="NSMutableArray" id="yDO-PT-DRI"/>
+                        <outletCollection property="channelSlidersCollection" destination="iQH-0Z-6ez" collectionClass="NSMutableArray" id="pYT-TM-lJj"/>
+                        <outletCollection property="channelSlidersCollection" destination="vsR-JP-KLN" collectionClass="NSMutableArray" id="e8O-dw-zZp"/>
+                        <outletCollection property="channelSlidersCollection" destination="TQp-KR-0bd" collectionClass="NSMutableArray" id="j8j-Xe-Jyo"/>
+                        <outletCollection property="channelSlidersCollection" destination="4Dk-Hu-BPM" collectionClass="NSMutableArray" id="UmF-FH-Wtf"/>
+                        <outletCollection property="channelSlidersCollection" destination="oHe-SZ-svZ" collectionClass="NSMutableArray" id="cYh-Jr-l7O"/>
+                        <outletCollection property="channelSlidersCollection" destination="Rfi-KI-xdQ" collectionClass="NSMutableArray" id="8D9-aZ-sdt"/>
+                        <outletCollection property="channelSlidersCollection" destination="3gY-eg-WSS" collectionClass="NSMutableArray" id="6ej-da-aZL"/>
+                        <outletCollection property="channelSlidersCollection" destination="Ixn-KF-C9T" collectionClass="NSMutableArray" id="uC5-a6-fKg"/>
+                        <outletCollection property="channelSlidersCollection" destination="kGL-zV-a6v" collectionClass="NSMutableArray" id="lPV-Qo-ZNk"/>
+                        <outletCollection property="channelValuesCollection" destination="5Vw-T2-pJq" collectionClass="NSMutableArray" id="HfO-g8-Oso"/>
+                        <outletCollection property="channelValuesCollection" destination="LdU-al-u7n" collectionClass="NSMutableArray" id="Kjr-38-fyS"/>
+                        <outletCollection property="channelValuesCollection" destination="JyQ-HR-JVx" collectionClass="NSMutableArray" id="4Cl-kx-oX5"/>
+                        <outletCollection property="channelValuesCollection" destination="pUk-zj-G56" collectionClass="NSMutableArray" id="ce5-y4-W1r"/>
+                        <outletCollection property="channelValuesCollection" destination="Q20-7V-6ay" collectionClass="NSMutableArray" id="DbX-7K-iKa"/>
+                        <outletCollection property="channelValuesCollection" destination="jWS-7Y-HtV" collectionClass="NSMutableArray" id="sey-kS-rhg"/>
+                        <outletCollection property="channelValuesCollection" destination="e5Y-gY-96z" collectionClass="NSMutableArray" id="QZ2-el-YTi"/>
+                        <outletCollection property="channelValuesCollection" destination="bVu-uJ-OrX" collectionClass="NSMutableArray" id="rPf-8l-zJS"/>
+                        <outletCollection property="channelValuesCollection" destination="Gu0-BC-vzq" collectionClass="NSMutableArray" id="b6X-nV-vPt"/>
+                        <outletCollection property="channelValuesCollection" destination="xHU-96-Usj" collectionClass="NSMutableArray" id="3Ib-da-VL3"/>
+                        <outletCollection property="channelValuesCollection" destination="Pqk-ze-N2Y" collectionClass="NSMutableArray" id="eZ0-jG-o51"/>
+                        <outletCollection property="channelValuesCollection" destination="4GQ-vm-Mal" collectionClass="NSMutableArray" id="ySt-Rl-xXm"/>
+                        <outletCollection property="channelValuesCollection" destination="KFw-bR-WfX" collectionClass="NSMutableArray" id="9hm-yb-mlv"/>
+                        <outletCollection property="channelValuesCollection" destination="m3I-hi-AeD" collectionClass="NSMutableArray" id="wz3-3m-ZFy"/>
+                        <outletCollection property="channelValuesCollection" destination="AdC-JP-GNJ" collectionClass="NSMutableArray" id="EPy-7f-PlT"/>
+                        <outletCollection property="channelValuesCollection" destination="NPW-WA-jM7" collectionClass="NSMutableArray" id="37g-vf-FgU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14.648437499999998" y="22.65625"/>
+        </scene>
+    </scenes>
+</document>
