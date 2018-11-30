@@ -7,20 +7,49 @@
 //
 
 import Foundation
-let CHANNELS: Int = 128;
+let CHANNELS: Int = 129;
 class DMX {
     
     // Variables for all channels
-    private var channels: [Int] = [CHANNELS]
-    private var blackout: [Int] = [CHANNELS]
+    private var channels = Array(repeating: 0, count: CHANNELS)
+    private var blackout = Array(repeating: 0, count: CHANNELS)
+    private var blackoutOn: Bool = false
+    private var channelSet: Int = 0
     
-    init() {
-        for i in 0...CHANNELS {
-            channels[i] = 0
-            blackout[i] = 0
+
+    // CHANGEBLACKOUTSTATUS()
+    // When the blackout button is pressed, all channels will given
+    // a value of 0 or revert to what they were before
+    func changeBlackOutStatus() {
+        blackoutOn = !blackoutOn
+        if blackoutOn {
+            for i in 0..<CHANNELS {
+                blackout[i] = channels[i]
+                channels[i] = 0
+            }
+        } else {
+            for i in 0..<CHANNELS {
+                channels[i] = blackout[i]
+            }
         }
     }
     
+    // CHANNELVALUESET()
+    // sets the given channel to the given value
+    func channelValueSet(channelIndex: Int, channelValue: Int) {
+        channels[channelIndex] = channelValue
+    }
     
+    // SETNEWCHANNELSET()
+    // Updates what channel group we are set to
+    func setNewChannelSet(CollectionIndexValue: Int) {
+        channelSet = CollectionIndexValue
+    }
     
+    // GETCHANNELVALUE()
+    // The second half to channelValueSet(), returns the
+    // channel value
+    func getChannelValue(channelToSet: Int) -> Int {
+        return channels[channelToSet]
+    }
 }

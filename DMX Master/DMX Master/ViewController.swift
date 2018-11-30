@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    lazy private var DMXController = DMX()
+    
     // Collections for scenes, channel values, channel sliders
     @IBOutlet var channelValuesCollection: [UILabel]!
     @IBOutlet var scceneSelection: [UIButton]!
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
         if let channelLabel = channelSelectCollection.firstIndex(of:sender) {
             var numberForLabel = (channelLabel * 16) + 1
             for i in 0...15 {
+                channelSlidersCollection[i].value = Float(DMXController.getChannelValue(channelToSet: numberForLabel))
+                channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
                 channelLabelsCollection[i].text = String(numberForLabel)
                 numberForLabel += 1
             }
