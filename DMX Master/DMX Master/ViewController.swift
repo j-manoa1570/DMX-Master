@@ -36,20 +36,30 @@ class ViewController: UIViewController {
         }
         channelSelectCollection[0].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
     }
+ 
+    @IBAction func blackoutChannelsbutton(_ sender: UIButton) {
+        DMXController.setBlackoutStatus()
+        DMXController.changeBlackOutStatus()
+        blackoutSelection.backgroundColor = DMXController.getBlackoutStatus() ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
     
     // Displays the current slider value.
     @IBAction func sliderValueUpdate(_ sender: UISlider) {
+        let channelGroup = DMXController.getChannelSet()
         if let sliderChannel = channelSlidersCollection.firstIndex(of: sender) {
             channelValuesCollection[sliderChannel].text = String(Int(channelSlidersCollection[sliderChannel].value))
+            DMXController.channelValueSet(channelIndex: ((channelGroup * 16) + (sliderChannel + 1)), channelValue: Int(channelSlidersCollection[sliderChannel].value))
         }
     }
     
     // Channel group selection. Updates color of button and slider label.
     @IBAction func channelLabelChange(_ sender: UIButton) {
         if let channelLabel = channelSelectCollection.firstIndex(of:sender) {
+            DMXController.setNewChannelSet(CollectionIndexValue: channelLabel)
             var numberForLabel = (channelLabel * 16) + 1
             for i in 0...15 {
-                channelSlidersCollection[i].value = Float(DMXController.getChannelValue(channelToSet: numberForLabel))
+                channelSlidersCollection[i].setValue(Float(DMXController.getChannelValue(channelToSet: numberForLabel)), animated: false)
                 channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
                 channelLabelsCollection[i].text = String(numberForLabel)
                 numberForLabel += 1

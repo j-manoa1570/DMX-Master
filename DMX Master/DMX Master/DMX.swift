@@ -21,7 +21,6 @@ class DMX {
     // When the blackout button is pressed, all channels will given
     // a value of 0 or revert to what they were before
     func changeBlackOutStatus() {
-        blackoutOn = !blackoutOn
         if blackoutOn {
             for i in 0..<CHANNELS {
                 blackout[i] = channels[i]
@@ -46,10 +45,27 @@ class DMX {
         channelSet = CollectionIndexValue
     }
     
+    // SETBLACKOUTSTATUS()
+    // Sets the new blackout status
+    func setBlackoutStatus() {
+        blackoutOn = !blackoutOn
+    }
+    
     // GETCHANNELVALUE()
     // The second half to channelValueSet(), returns the
     // channel value
     func getChannelValue(channelToSet: Int) -> Int {
         return channels[channelToSet]
+    }
+    
+    // GETCHANNELSET()
+    // Returns what channel set the user is on
+    func getChannelSet() -> Int {
+        return channelSet
+    }
+    
+    // GETBLACKOUTSTATUS()
+    func getBlackoutStatus() -> Bool {
+        return blackoutOn
     }
 }
