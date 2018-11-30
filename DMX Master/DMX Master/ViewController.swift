@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         channelSelectCollection[0].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
     }
  
+    // Manages blackout button. When selected, calls DMX class methods for Blackout and updates UI.
     @IBAction func blackoutChannelsbutton(_ sender: UIButton) {
         DMXController.setBlackoutStatus()
         DMXController.changeBlackOutStatus()
@@ -73,6 +74,27 @@ class ViewController: UIViewController {
             }
             for i in channelSelectCollection.indices {
                 channelSelectCollection[i].backgroundColor = (i == channelLabel) ? #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1) : #colorLiteral(red: 0.8823529412, green: 0.1960784314, blue: 0.1607843137, alpha: 1)
+            }
+        }
+    }
+    
+    // TODO: Scenes
+    @IBAction func saveOnOffButton(_ sender: UIButton) {
+        DMXController.setSaveStatus()
+        saveButtonOnOff.backgroundColor = DMXController.getSaveStatus() ? #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+    }
+    @IBAction func sceneSelect(_ sender: UIButton) {
+        let scene = scceneSelection.firstIndex(of: sender)
+        if DMXController.getSaveStatus() {
+            DMXController.makeScene(sceneID: scene!)
+            DMXController.setSaveStatus()
+            saveButtonOnOff.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+            scceneSelection[scene!].backgroundColor = #colorLiteral(red: 1, green: 0.6238600496, blue: 0, alpha: 1)
+        } else {
+            var values: [Int] = DMXController.getSceneChannelValues(sceneID: scene!)
+            for i in 0...129 {
+                DMXController.channelValueSet(channelIndex: i, channelValue: values[i])
+                scceneSelection[scene!].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
             }
         }
     }

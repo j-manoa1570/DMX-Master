@@ -9,21 +9,22 @@
 import Foundation
 
 // Structure for the scene buttons so they can be used individually
-struct Scene {
-    var channels: [Int] = [128]
+class Scene {
+    private var channels: [Int] = []
     private var isSet = false
     private var identifier: Int
-    private static var identifierFactory = 0
-    private static func getUniqueIdentifier() -> Int {
-        Scene.identifierFactory += 1
-        return identifierFactory
+    
+    init(id: Int, channelValues: [Int]) {
+        self.identifier = id
+        isSet = true
+        for i in 0..<channelValues.count {
+            channels.append(channelValues[i])
+        }
     }
     
-    init() {
-        self.identifier = Scene.getUniqueIdentifier()
-    }
-    
-    mutating func setSaveStatus() {
-        isSet = !isSet
+    // GETCHANNELVALUES()
+    // Returns the channel values
+    func getChannelValues() -> [Int] {
+        return channels
     }
 }

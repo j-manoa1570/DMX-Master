@@ -14,9 +14,19 @@ class DMX {
     private var channels = Array(repeating: 0, count: CHANNELS)
     private var blackout = Array(repeating: 0, count: CHANNELS)
     private var blackoutOn: Bool = false
+    private var saveOn: Bool = false
     private var channelSet: Int = 0
+    private var numberOfScenes: Int = 0
+    private var currentlyUsedScenes: [Scene] = []
     
-
+    // MAKESCENE()
+    // Creates a new scene
+    func makeScene(sceneID: Int) {
+        let newScene = Scene(id: sceneID, channelValues: channels)
+        currentlyUsedScenes.append(newScene)
+        numberOfScenes += 1
+    }
+    
     // CHANGEBLACKOUTSTATUS()
     // When the blackout button is pressed, all channels will given
     // a value of 0 or revert to what they were before
@@ -51,6 +61,12 @@ class DMX {
         blackoutOn = !blackoutOn
     }
     
+    // SETSAVESTATUS()
+    // Sets the new save status
+    func setSaveStatus() {
+        saveOn = !saveOn
+    }
+    
     // GETCHANNELVALUE()
     // The second half to channelValueSet(), returns the
     // channel value
@@ -67,5 +83,17 @@ class DMX {
     // GETBLACKOUTSTATUS()
     func getBlackoutStatus() -> Bool {
         return blackoutOn
+    }
+    
+    // GETSAVESTATUS()
+    // Returns save status button
+    func getSaveStatus() -> Bool {
+        return saveOn
+    }
+    
+    // GETSCENECHANNELVALUES()
+    // Returns the values that the scene was storing
+    func getSceneChannelValues(sceneID: Int) -> [Int] {
+        return currentlyUsedScenes[sceneID].getChannelValues()
     }
 }

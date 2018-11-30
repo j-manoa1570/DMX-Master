@@ -137,6 +137,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Idi-U9-HUg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCK-KW-976">
                                         <rect key="frame" x="91" y="0.0" width="85" height="30"/>
@@ -151,6 +154,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8A-lI-54I"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE8-RS-Rhi">
                                         <rect key="frame" x="182" y="0.0" width="85" height="30"/>
@@ -165,6 +171,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fpt-af-shX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zn-Ch-cXU">
                                         <rect key="frame" x="273" y="0.0" width="85" height="30"/>
@@ -179,6 +188,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5y8-i2-80Q"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7n-9M-avi">
                                         <rect key="frame" x="364" y="0.0" width="85" height="30"/>
@@ -193,6 +205,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nxv-6X-y7C"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFK-YN-feI">
                                         <rect key="frame" x="455" y="0.0" width="85" height="30"/>
@@ -207,6 +222,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FHO-64-rde"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-yE-ZZM">
                                         <rect key="frame" x="546" y="0.0" width="85" height="30"/>
@@ -221,6 +239,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWW-WM-CrH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-hu-C7t">
                                         <rect key="frame" x="637" y="0.0" width="85" height="30"/>
@@ -235,6 +256,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atU-zS-7oM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-tS-J55">
                                         <rect key="frame" x="728" y="0.0" width="85" height="30"/>
@@ -249,6 +273,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveOnOffButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rW9-p0-BqD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
