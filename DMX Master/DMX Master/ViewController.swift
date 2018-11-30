@@ -40,6 +40,13 @@ class ViewController: UIViewController {
     @IBAction func blackoutChannelsbutton(_ sender: UIButton) {
         DMXController.setBlackoutStatus()
         DMXController.changeBlackOutStatus()
+        let channelGroup = DMXController.getChannelSet()
+        var channelNumber = (channelGroup * 16) + 1
+        for i in 0...15 {
+            channelSlidersCollection[i].setValue(Float(DMXController.getChannelValue(channelToSet: channelNumber)), animated: false)
+            channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
+            channelNumber += 1
+        }
         blackoutSelection.backgroundColor = DMXController.getBlackoutStatus() ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     

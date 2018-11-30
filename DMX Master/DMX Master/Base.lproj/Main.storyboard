@@ -408,6 +408,9 @@
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="blackoutChannelsbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fde-YU-Kt3"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-pg-SXp" userLabel="Current Channel">
                                 <rect key="frame" x="20" y="719" width="984" height="29"/>
