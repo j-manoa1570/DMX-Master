@@ -97,13 +97,15 @@ class ViewController: UIViewController {
             }
             for i in scceneSelection.indices {
                 if i == scene! {
-                    DMXController.copyChannels(index: i)
-                    var label = (DMXController.getChannelSet() * 16) + 1
-                    for i in 0..<channelSlidersCollection.count {
-                        channelSlidersCollection[i].setValue(Float(DMXController.getChannelValue(channelToSet: (label))), animated: false)
-                        channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
-                        channelLabelsCollection[i].text = String(label)
-                        label += 1
+                    if DMXController.sceneSet(index: i) {
+                        DMXController.copyChannels(index: i)
+                        var label = (DMXController.getChannelSet() * 16) + 1
+                        for i in 0..<channelSlidersCollection.count {
+                            channelSlidersCollection[i].setValue(Float(DMXController.getChannelValue(channelToSet: (label))), animated: false)
+                            channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
+                            channelLabelsCollection[i].text = String(label)
+                            label += 1
+                        }
                     }
                     scceneSelection[i].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
                     
