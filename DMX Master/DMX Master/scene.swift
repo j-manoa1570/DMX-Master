@@ -16,7 +16,6 @@ class Scene {
     
     init(id: Int, channelValues: [Int]) {
         self.identifier = id
-        isSet = true
         for i in 0..<channelValues.count {
             channels.append(channelValues[i])
         }
@@ -26,5 +25,20 @@ class Scene {
     // Returns the channel values
     func getChannelValues() -> [Int] {
         return channels
+    }
+    
+    // GETISSETSTATUS()
+    // Returns isSet
+    func getIsSetStatus() -> Bool {
+        return isSet
+    }
+    
+    // SETVALUES()
+    // Updates the values of the scene
+    func setValues(channelValue: [Int]) {
+        isSet = true
+        for i in 0..<channelValue.count {
+            channels[i] = channelValue[i]
+        }
     }
 }

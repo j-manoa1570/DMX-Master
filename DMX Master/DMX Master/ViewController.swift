@@ -86,15 +86,30 @@ class ViewController: UIViewController {
     @IBAction func sceneSelect(_ sender: UIButton) {
         let scene = scceneSelection.firstIndex(of: sender)
         if DMXController.getSaveStatus() {
-            DMXController.makeScene(sceneID: scene!)
             DMXController.setSaveStatus()
+            DMXController.updateScene(index: scene!)
             saveButtonOnOff.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
             scceneSelection[scene!].backgroundColor = #colorLiteral(red: 1, green: 0.6238600496, blue: 0, alpha: 1)
         } else {
             var values: [Int] = DMXController.getSceneChannelValues(sceneID: scene!)
-            for i in 0...129 {
+            for i in 0..<129 {
                 DMXController.channelValueSet(channelIndex: i, channelValue: values[i])
-                scceneSelection[scene!].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
+            }
+            for i in scceneSelection.indices {
+                if i == scene! {
+                    DMXController.copyChannels(index: i)
+                    var label = (DMXController.getChannelSet() * 16) + 1
+                    for i in 0..<channelSlidersCollection.count {
+                        channelSlidersCollection[i].setValue(Float(DMXController.getChannelValue(channelToSet: (label))), animated: false)
+                        channelValuesCollection[i].text = String(Int(channelSlidersCollection[i].value))
+                        channelLabelsCollection[i].text = String(label)
+                        label += 1
+                    }
+                    scceneSelection[i].backgroundColor = #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1)
+                    
+                } else {
+                    scceneSelection[i].backgroundColor = DMXController.sceneSet(index: i) ? #colorLiteral(red: 1, green: 0.6238600496, blue: 0, alpha: 1) : #colorLiteral(red: 0.8823529412, green: 0.1960784314, blue: 0.1607843137, alpha: 1)
+                }
             }
         }
     }

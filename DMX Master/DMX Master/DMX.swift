@@ -19,12 +19,33 @@ class DMX {
     private var numberOfScenes: Int = 0
     private var currentlyUsedScenes: [Scene] = []
     
+    init() {
+        for i in 0..<8 {
+            makeScene(sceneID: i)
+        }
+    }
+    
+    // COPYCHANNELS()
+    // Copies the values for the channels from a scene to the channels array
+    func copyChannels(index: Int) {
+        let values = currentlyUsedScenes[index].getChannelValues()
+        for i in 0..<channels.count {
+            channels[i] = values[i]
+        }
+    }
+    
     // MAKESCENE()
     // Creates a new scene
     func makeScene(sceneID: Int) {
         let newScene = Scene(id: sceneID, channelValues: channels)
         currentlyUsedScenes.append(newScene)
         numberOfScenes += 1
+    }
+    
+    // UPDATESCENE()
+    // Updates the values in the scene
+    func updateScene(index: Int) {
+        currentlyUsedScenes[index].setValues(channelValue: channels)
     }
     
     // CHANGEBLACKOUTSTATUS()
@@ -95,5 +116,11 @@ class DMX {
     // Returns the values that the scene was storing
     func getSceneChannelValues(sceneID: Int) -> [Int] {
         return currentlyUsedScenes[sceneID].getChannelValues()
+    }
+    
+    // SCENESET()
+    // Returns if the scene is set
+    func sceneSet(index: Int) -> Bool {
+        return currentlyUsedScenes[index].getIsSetStatus()
     }
 }
