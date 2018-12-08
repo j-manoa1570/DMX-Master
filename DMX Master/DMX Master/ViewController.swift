@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
         // Slider Rotation, set slider values to current value, set background to
         // green for default channel selection(1-16), and label sliders with channels.
         for i in channelSlidersCollection.indices {
@@ -95,11 +94,13 @@ class ViewController: UIViewController {
         }
     }
     
-    // TODO: Scenes
+    // Button used to allow for saving scenes locally
     @IBAction func saveOnOffButton(_ sender: UIButton) {
         DMXController.setSaveStatus()
         saveButtonOnOff.backgroundColor = DMXController.getSaveStatus() ? #colorLiteral(red: 0.1668410003, green: 0.6179428697, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
     }
+    
+    // Buttons that are used to switch between scenes
     @IBAction func sceneSelect(_ sender: UIButton) {
         let scene = scceneSelection.firstIndex(of: sender)
         if DMXController.getSaveStatus() {
