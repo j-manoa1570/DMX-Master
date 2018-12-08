@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     // individual elements
     @IBOutlet weak var blackoutSelection: UIButton!
     @IBOutlet weak var saveButtonOnOff: UIButton!
+    @IBOutlet weak var transitionSlider: UISlider!
+    @IBOutlet weak var transitionTimeLabel: UILabel!
+    @IBOutlet weak var sceneSlider: UISlider!
+    @IBOutlet weak var sceneTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +55,19 @@ class ViewController: UIViewController {
         blackoutSelection.backgroundColor = DMXController.getBlackoutStatus() ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
+    // Updates the view to display current scene timer value
+    @IBAction func sceneTimerValueUpdate(_ sender: UISlider) {
+        let value = Int(sceneSlider.value)
+        DMXController.setSceneTimer(time: value)
+        sceneTimeLabel.text = "Scene Time: " + String(value) + "s"
+    }
+    
+    // Updates the view to display current transition timer value
+    @IBAction func transitionTimerValueUpdate(_ sender: Any) {
+        let value = Int(transitionSlider.value)
+        DMXController.setTransitionTimer(time: value)
+        transitionTimeLabel.text = "Transition Time: " + String(value) + "s"
+    }
     
     // Displays the current slider value.
     @IBAction func sliderValueUpdate(_ sender: UISlider) {

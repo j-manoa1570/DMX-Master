@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mAh-KQ-rLN" userLabel="Channel Values">
-                                <rect key="frame" x="20" y="135" width="984" height="29"/>
+                                <rect key="frame" x="20" y="160" width="984" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vw-T2-pJq" userLabel="Channel 1">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
@@ -119,7 +119,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="240-bi-0BW" userLabel="Scene Selection">
-                                <rect key="frame" x="20" y="44" width="813" height="30"/>
+                                <rect key="frame" x="20" y="84" width="813" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51l-uV-uQR">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
@@ -280,7 +280,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CLn-lb-mOp" userLabel="Channel Group Selection">
-                                <rect key="frame" x="20" y="90" width="984" height="30"/>
+                                <rect key="frame" x="20" y="120" width="984" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw7-Ie-n1y">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
@@ -421,7 +421,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oY0-QY-AAI">
-                                <rect key="frame" x="919" y="44" width="85" height="30"/>
+                                <rect key="frame" x="919" y="84" width="85" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="VO0-L2-oKi"/>
@@ -812,28 +812,99 @@
                                     <action selector="sliderValueUpdate:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xu4-0B-gy5"/>
                                 </connections>
                             </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LKp-Gp-7Fh" userLabel="Scene Tools">
+                                <rect key="frame" x="20" y="46" width="454.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-nK-5dR" userLabel="Scene Timer">
+                                        <rect key="frame" x="-2" y="0.0" width="304" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="B9p-LZ-7CA"/>
+                                        </constraints>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.52580503680000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sceneTimerValueUpdate:" destination="BYZ-38-t0r" eventType="valueChanged" id="gu4-tW-kZd"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene Time: 30s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pu-Z0-HQX">
+                                        <rect key="frame" x="308" y="0.0" width="146.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-yx-YIF">
+                                <rect key="frame" x="523" y="46" width="481" height="30"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="S8X-ph-GbN" userLabel="Transition Speed">
+                                        <rect key="frame" x="-2" y="0.0" width="304" height="31"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="S3Y-M0-uQ0"/>
+                                        </constraints>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.52580503680000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="transitionTimerValueUpdate:" destination="BYZ-38-t0r" eventType="valueChanged" id="uzC-TC-cMt"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition Time: 10s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo6-U7-Voc">
+                                        <rect key="frame" x="308" y="0.0" width="173" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="hdf-yx-YIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="5Qq-Jx-V5e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CLn-lb-mOp" secondAttribute="trailing" constant="20" id="8gb-10-Ogy"/>
-                            <constraint firstItem="240-bi-0BW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="9vT-gC-EW2"/>
+                            <constraint firstItem="240-bi-0BW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="9vT-gC-EW2"/>
+                            <constraint firstItem="3jT-nK-5dR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BWz-e9-p0S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mAh-KQ-rLN" secondAttribute="trailing" constant="20" id="Gj7-O2-AG7"/>
-                            <constraint firstItem="mAh-KQ-rLN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="HcO-5h-xW5"/>
+                            <constraint firstItem="mAh-KQ-rLN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="HcO-5h-xW5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oY0-QY-AAI" secondAttribute="trailing" constant="20" id="IkL-Sr-iE2"/>
                             <constraint firstItem="mAh-KQ-rLN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Z60-Na-OXY"/>
-                            <constraint firstItem="CLn-lb-mOp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="dGk-qW-1zg"/>
+                            <constraint firstItem="CLn-lb-mOp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="dGk-qW-1zg"/>
                             <constraint firstItem="240-bi-0BW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fkC-Z4-6EP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R6F-pg-SXp" secondAttribute="bottom" constant="20" id="g6H-Mc-AOv"/>
+                            <constraint firstItem="3jT-nK-5dR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="gaq-uC-MPf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R6F-pg-SXp" secondAttribute="trailing" constant="20" id="hsd-0J-4UE"/>
                             <constraint firstItem="R6F-pg-SXp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nME-UV-cxx"/>
+                            <constraint firstItem="hdf-yx-YIF" firstAttribute="leading" secondItem="6Pu-Z0-HQX" secondAttribute="trailing" constant="48.5" id="oSK-a7-sTZ"/>
                             <constraint firstItem="CLn-lb-mOp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qPL-oQ-UnC"/>
-                            <constraint firstItem="oY0-QY-AAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="rnX-cK-1Ba"/>
+                            <constraint firstItem="oY0-QY-AAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="rnX-cK-1Ba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="blackoutSelection" destination="oY0-QY-AAI" id="Oqw-fD-OBu"/>
                         <outlet property="saveButtonOnOff" destination="EvT-tS-J55" id="6ko-Hu-JrL"/>
+                        <outlet property="sceneSlider" destination="3jT-nK-5dR" id="93f-ij-I6T"/>
+                        <outlet property="sceneTimeLabel" destination="6Pu-Z0-HQX" id="xn3-47-xAe"/>
+                        <outlet property="transitionSlider" destination="S8X-ph-GbN" id="zSv-8F-jn1"/>
+                        <outlet property="transitionTimeLabel" destination="yo6-U7-Voc" id="SIM-wN-nLd"/>
                         <outletCollection property="scceneSelection" destination="zCK-KW-976" collectionClass="NSMutableArray" id="4Tp-0V-KKb"/>
                         <outletCollection property="channelSlidersCollection" destination="889-bb-lTj" collectionClass="NSMutableArray" id="TVa-8B-8ei"/>
                         <outletCollection property="channelSlidersCollection" destination="gvU-dA-wG7" collectionClass="NSMutableArray" id="rCZ-B3-ISA"/>

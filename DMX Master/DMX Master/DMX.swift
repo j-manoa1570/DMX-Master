@@ -18,6 +18,8 @@ class DMX {
     private var channelSet: Int = 0
     private var numberOfScenes: Int = 0
     private var currentlyUsedScenes: [Scene] = []
+    private var sceneTimer: Int = 1
+    private var transitionTimer: Int = 1
     
     init() {
         for i in 0..<8 {
@@ -88,6 +90,17 @@ class DMX {
         saveOn = !saveOn
     }
     
+    // SETSCENETIMER()
+    // Sets a new value for sceneTimer
+    func setSceneTimer(time: Int) {
+        sceneTimer = time
+    }
+    
+    // SETTRANSITIONTIMER()
+    func setTransitionTimer(time: Int) {
+        transitionTimer = time
+    }
+    
     // GETCHANNELVALUE()
     // The second half to channelValueSet(), returns the
     // channel value
@@ -122,5 +135,17 @@ class DMX {
     // Returns if the scene is set
     func sceneSet(index: Int) -> Bool {
         return currentlyUsedScenes[index].getIsSetStatus()
+    }
+    
+    // GETSCENETIMER()
+    // Returns the timer value
+    func getSceneTimer() -> Int {
+        return sceneTimer
+    }
+    
+    // GETTRANSITIONTIMER()
+    // Returns the timer value
+    func getTransitionTimer() -> Int {
+        return transitionTimer
     }
 }
