@@ -186,6 +186,16 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             DMXController.updateScene(index: scene!)
             saveButtonOnOff.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
             scceneSelection[scene!].backgroundColor = #colorLiteral(red: 1, green: 0.6238600496, blue: 0, alpha: 1)
+            var data = 4
+            var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            data = 1
+            intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            data = scene!
+            intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+
         } else {
             var values: [Int] = DMXController.getSceneChannelValues(sceneID: scene!)
             for i in 0..<129 {
