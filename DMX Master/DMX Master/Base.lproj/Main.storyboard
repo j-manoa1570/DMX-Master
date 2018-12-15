@@ -22,7 +22,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qjm-n0-pSe"/>
                         <segue destination="Svo-qE-Zyk" kind="relationship" relationship="viewControllers" id="9tr-eO-ykD"/>
-                        <segue destination="6PP-18-kZa" kind="relationship" relationship="viewControllers" id="cJh-4M-fFg"/>
+                        <segue destination="6PP-18-kZa" kind="relationship" relationship="viewControllers" id="zmO-lb-7Yd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d9-20-oMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,7 +887,7 @@
                                             <action selector="transitionTimerValueUpdate:" destination="BYZ-38-t0r" eventType="valueChanged" id="uzC-TC-cMt"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition Time: 10s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo6-U7-Voc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition Time: 10s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo6-U7-Voc">
                                         <rect key="frame" x="308" y="0.0" width="173" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.98044890169999999" green="0.85338383910000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -999,18 +999,43 @@
         <!--Menu-->
         <scene sceneID="9J7-Di-ZKG">
             <objects>
-                <viewController id="Svo-qE-Zyk" sceneMemberID="viewController">
+                <viewController id="Svo-qE-Zyk" customClass="MenuViewController" customModule="DMX_Master" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hgs-eu-ePu">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKs-KH-Imf">
-                                <rect key="frame" x="99" y="283" width="346" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xly-UR-fte">
+                                <rect key="frame" x="584" y="40" width="400" height="100"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.1960784314" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="pBw-03-WmF"/>
+                                    <constraint firstAttribute="height" constant="100" id="q2M-Fk-uiG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Play"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playButton:" destination="uPK-Xp-5in" eventType="touchUpInside" id="vxw-D5-uCn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBh-HS-pqh">
+                                <rect key="frame" x="40" y="40" width="400" height="100"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.1960784314" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="1V1-ME-gXG"/>
+                                    <constraint firstAttribute="height" constant="100" id="FN3-qw-UUb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="BLE Not Connected"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -1020,11 +1045,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaG-GB-og4">
-                                <rect key="frame" x="584" y="283" width="346" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaG-GB-og4">
+                                <rect key="frame" x="584" y="280" width="400" height="100"/>
                                 <color key="backgroundColor" red="0.88235294117647056" green="0.19607843137254902" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="FJH-Qb-jXA"/>
+                                    <constraint firstAttribute="width" constant="400" id="QJC-Ee-iPT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <state key="normal" title="Load"/>
                                 <userDefinedRuntimeAttributes>
@@ -1036,15 +1064,102 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-N5-oUw">
+                                <rect key="frame" x="40" y="160" width="400" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="WBu-jc-YOI"/>
+                                    <constraint firstAttribute="height" constant="25" id="udv-5H-DQb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKs-KH-Imf">
+                                <rect key="frame" x="584" y="160" width="400" height="100"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.1960784314" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="76V-8O-Rls"/>
+                                    <constraint firstAttribute="height" constant="100" id="XJZ-lM-bU9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Save"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aBh-HS-pqh" firstAttribute="top" secondItem="ubB-DJ-122" secondAttribute="top" constant="20" id="5eR-dQ-i2p"/>
+                            <constraint firstItem="VaG-GB-og4" firstAttribute="top" secondItem="cKs-KH-Imf" secondAttribute="bottom" constant="20" id="7fH-tO-HU4"/>
+                            <constraint firstItem="ubB-DJ-122" firstAttribute="trailing" secondItem="Xly-UR-fte" secondAttribute="trailing" constant="40" id="Dja-hQ-eNz"/>
+                            <constraint firstItem="S1P-N5-oUw" firstAttribute="top" secondItem="aBh-HS-pqh" secondAttribute="bottom" constant="20" id="HH1-TK-SVC"/>
+                            <constraint firstItem="Xly-UR-fte" firstAttribute="top" secondItem="ubB-DJ-122" secondAttribute="top" constant="20" id="Hcn-3M-oYc"/>
+                            <constraint firstItem="aBh-HS-pqh" firstAttribute="leading" secondItem="ubB-DJ-122" secondAttribute="leading" constant="40" id="LLZ-lC-YbZ"/>
+                            <constraint firstItem="ubB-DJ-122" firstAttribute="trailing" secondItem="VaG-GB-og4" secondAttribute="trailing" constant="40" id="ba4-7G-wz9"/>
+                            <constraint firstItem="ubB-DJ-122" firstAttribute="trailing" secondItem="cKs-KH-Imf" secondAttribute="trailing" constant="40" id="cj6-Wv-9WS"/>
+                            <constraint firstItem="cKs-KH-Imf" firstAttribute="top" secondItem="Xly-UR-fte" secondAttribute="bottom" constant="20" id="fNT-zq-UaN"/>
+                            <constraint firstItem="S1P-N5-oUw" firstAttribute="leading" secondItem="ubB-DJ-122" secondAttribute="leading" constant="40" id="zkg-Vo-jlw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ubB-DJ-122"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" id="ut4-AM-lTM"/>
+                    <connections>
+                        <outlet property="blueButton" destination="aBh-HS-pqh" id="APa-Bb-kty"/>
+                        <outlet property="loadButton" destination="VaG-GB-og4" id="HSF-fV-cj1"/>
+                        <outlet property="playButton" destination="Xly-UR-fte" id="cqv-xE-gzP"/>
+                        <outlet property="saveButton" destination="cKs-KH-Imf" id="6gc-ag-cCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrS-iL-aXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uPK-Xp-5in" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-969.14062499999989" y="-196.09375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T4P-IQ-zL6">
+            <objects>
+                <viewController id="rWP-8J-GVi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hqG-rO-7bg">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaY-Mk-5Vc">
+                                <rect key="frame" x="312" y="99" width="400" height="100"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.1960784314" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="foT-3G-70L"/>
+                                    <constraint firstAttribute="height" constant="100" id="u28-Vj-hKQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Play"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playButton:" destination="uPK-Xp-5in" eventType="touchUpInside" id="7zG-8e-dY9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="W7I-D9-MIC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DU4-0I-H4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271" y="-316"/>
         </scene>
         <!--Previewer(Not Ready)-->
         <scene sceneID="VPl-yf-sdB">
