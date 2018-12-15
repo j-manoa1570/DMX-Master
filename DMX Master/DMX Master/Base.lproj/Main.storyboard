@@ -1023,6 +1023,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="changePlayStatus:" destination="Svo-qE-Zyk" eventType="touchUpInside" id="9LX-eT-FMa"/>
                                     <action selector="playButton:" destination="uPK-Xp-5in" eventType="touchUpInside" id="vxw-D5-uCn"/>
                                 </connections>
                             </button>

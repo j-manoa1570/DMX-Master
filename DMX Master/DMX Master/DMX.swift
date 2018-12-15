@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreBluetooth
+
 let CHANNELS: Int = 129;
 class DMX {
     

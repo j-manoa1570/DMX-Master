@@ -7,8 +7,38 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class ViewController: UIViewController {
+let BLE_Arduino_UART_Service_CBUUID = CBUUID(string: "0x0001")
+
+let BLE_Arduino_UART_RX_Characteristic_CBUUID = CBUUID(string: "0x0002")
+let BLE_Arduino_UART_TX_Characteristic_CBUUID = CBUUID(string: "0x0003")
+
+class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDelegate {
+    
+    var centralManager: CBCentralManager?
+    var peripheralArduinoDMX: CBPeripheral?
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+        case .unknown:
+            print("Bluetooth Status is UNKNOWN")
+        case .resetting:
+            print("Bluetooth Status is RESETTING")
+        case .unsupported:
+            print("Bluetooth status is UNSUPPORTED")
+        case .unauthorized:
+            print("Bluetooth status is UNAUTHORIZED")
+        case .poweredOff:
+            print("Bluetooth status is POWERED OFF")
+        case .poweredOn:
+            print("Bluetooth status is POWERED ON")
+            
+            
+            centralManager?.scanForPeripherals(withServices: [BLE_Arduino_UART_Service_CBUUID])
+        }
+    }
+    
 
     lazy private var DMXController = DMX()
     
@@ -29,6 +59,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // BLE Stuff
+        let centralQueue: DispatchQueue = DispatchQueue(label: "Arduino_Queue", attributes: .concurrent)
+        centralManager = CBCentralManager(delegate: self, queue: centralQueue)
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         // Slider Rotation, set slider values to current value, set background to
         // green for default channel selection(1-16), and label sliders with channels.
