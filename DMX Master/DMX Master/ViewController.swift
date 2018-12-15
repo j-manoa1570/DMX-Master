@@ -9,10 +9,10 @@
 import UIKit
 import CoreBluetooth
 
-let BLE_Arduino_UART_Service_CBUUID = CBUUID(string: "0x0001")
+let BLE_Arduino_UART_Service_CBUUID = CBUUID(string: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
 
-let BLE_Arduino_UART_RX_Characteristic_CBUUID = CBUUID(string: "0x0002")
-let BLE_Arduino_UART_TX_Characteristic_CBUUID = CBUUID(string: "0x0003")
+let BLE_Arduino_UART_RX_Characteristic_CBUUID = CBUUID(string: "6E400002-B5A3-F393-E0A9-E50E24DCCA9E")
+let BLE_Arduino_UART_TX_Characteristic_CBUUID = CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")
 
 class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDelegate {
     
@@ -20,22 +20,26 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
     var peripheralArduinoDMX: CBPeripheral?
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
-        case .unknown:
-            print("Bluetooth Status is UNKNOWN")
-        case .resetting:
-            print("Bluetooth Status is RESETTING")
-        case .unsupported:
-            print("Bluetooth status is UNSUPPORTED")
-        case .unauthorized:
-            print("Bluetooth status is UNAUTHORIZED")
-        case .poweredOff:
-            print("Bluetooth status is POWERED OFF")
-        case .poweredOn:
-            print("Bluetooth status is POWERED ON")
-            
-            
-            centralManager?.scanForPeripherals(withServices: [BLE_Arduino_UART_Service_CBUUID])
+        if central.state == .poweredOn {
+            centralManager?.scanForPeripherals(withServices: [BLE_Arduino_UART_Service_CBUUID], options: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        centralManager?.stopScan()
+        peripheralArduinoDMX = peripheral
+        centralManager?.connect(peripheral, options: nil)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        peripheral.delegate = self
+        peripheral.discoverServices([BLE_Arduino_UART_Service_CBUUID])
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        if let service = peripheral.services?.first(where: { $0.uuid == BLE_Arduino_UART_Service_CBUUID}) {
+            peripheral.discoverCharacteristics([BLE_Arduino_UART_RX_Characteristic_CBUUID], for: service)
+            peripheral.discoverCharacteristics([BLE_Arduino_UART_TX_Characteristic_CBUUID], for: service)
         }
     }
     
@@ -111,6 +115,9 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
         if let sliderChannel = channelSlidersCollection.firstIndex(of: sender) {
             channelValuesCollection[sliderChannel].text = String(Int(channelSlidersCollection[sliderChannel].value))
             DMXController.channelValueSet(channelIndex: ((channelGroup * 16) + (sliderChannel + 1)), channelValue: Int(channelSlidersCollection[sliderChannel].value))
+            var data = ((channelGroup * 16) + (sliderChannel + 1))
+            var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: BLE_Arduino_UART_RX_Characteristic_CBUUID, type: CBCharacteristicWriteType.withoutResponse)
         }
     }
     
