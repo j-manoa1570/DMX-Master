@@ -18,6 +18,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
     
     var centralManager: CBCentralManager?
     var peripheralArduinoDMX: CBPeripheral?
+    var characteristicRX: CBCharacteristic?
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
@@ -41,6 +42,22 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             peripheral.discoverCharacteristics([BLE_Arduino_UART_RX_Characteristic_CBUUID], for: service)
             peripheral.discoverCharacteristics([BLE_Arduino_UART_TX_Characteristic_CBUUID], for: service)
         }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+       
+        guard let characteristics = service.characteristics else {
+            return
+        }
+        for characteristic in characteristics {
+            if characteristic.uuid.isEqual(BLE_Arduino_UART_RX_Characteristic_CBUUID) {
+                characteristicRX = characteristic
+                peripheral.setNotifyValue(true, for: characteristicRX!)
+            }
+        }
+        //if let characteristic = service.characteristics?.first(where: { $0.uuid == BLE_Arduino_UART_RX_Characteristic_CBUUID}) {
+          //  peripheral.setNotifyValue(true, for: characteristic)
+        //}
     }
     
 
@@ -93,6 +110,10 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             channelNumber += 1
         }
         blackoutSelection.backgroundColor = DMXController.getBlackoutStatus() ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        // Send the instruction type
+        var data = 9
+        let intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+        peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
     }
     
     // Updates the view to display current scene timer value
@@ -115,9 +136,22 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
         if let sliderChannel = channelSlidersCollection.firstIndex(of: sender) {
             channelValuesCollection[sliderChannel].text = String(Int(channelSlidersCollection[sliderChannel].value))
             DMXController.channelValueSet(channelIndex: ((channelGroup * 16) + (sliderChannel + 1)), channelValue: Int(channelSlidersCollection[sliderChannel].value))
-            var data = ((channelGroup * 16) + (sliderChannel + 1))
+           
+            // Send the instruction type
+            var data = 1
             var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
-            peripheralArduinoDMX?.writeValue(intData, for: BLE_Arduino_UART_RX_Characteristic_CBUUID, type: CBCharacteristicWriteType.withoutResponse)
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            
+            // Send the channel
+             data = ((channelGroup * 16) + (sliderChannel + 1))
+             intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            
+            // Send it
+            data = Int(channelSlidersCollection[sliderChannel].value)
+            intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+
         }
     }
     

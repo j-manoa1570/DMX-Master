@@ -22,7 +22,6 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qjm-n0-pSe"/>
                         <segue destination="Svo-qE-Zyk" kind="relationship" relationship="viewControllers" id="9tr-eO-ykD"/>
-                        <segue destination="6PP-18-kZa" kind="relationship" relationship="viewControllers" id="zmO-lb-7Yd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d9-20-oMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1122,62 +1121,6 @@
                 <exit id="uPK-Xp-5in" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-969.14062499999989" y="-196.09375"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="T4P-IQ-zL6">
-            <objects>
-                <viewController id="rWP-8J-GVi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hqG-rO-7bg">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaY-Mk-5Vc">
-                                <rect key="frame" x="312" y="99" width="400" height="100"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.1960784314" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="foT-3G-70L"/>
-                                    <constraint firstAttribute="height" constant="100" id="u28-Vj-hKQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="Play"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="playButton:" destination="uPK-Xp-5in" eventType="touchUpInside" id="7zG-8e-dY9"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="W7I-D9-MIC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DU4-0I-H4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-271" y="-316"/>
-        </scene>
-        <!--Previewer(Not Ready)-->
-        <scene sceneID="VPl-yf-sdB">
-            <objects>
-                <viewController id="6PP-18-kZa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NPs-yJ-luz">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fv0-hV-dCW"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Previewer(Not Ready)" id="W9K-tQ-QJs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DB1-zj-nIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-969" y="505"/>
         </scene>
     </scenes>
 </document>
