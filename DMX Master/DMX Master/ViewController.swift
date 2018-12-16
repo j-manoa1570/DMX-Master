@@ -55,9 +55,6 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
                 peripheral.setNotifyValue(true, for: characteristicRX!)
             }
         }
-        //if let characteristic = service.characteristics?.first(where: { $0.uuid == BLE_Arduino_UART_RX_Characteristic_CBUUID}) {
-          //  peripheral.setNotifyValue(true, for: characteristic)
-        //}
     }
     
 
@@ -136,22 +133,25 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
         if let sliderChannel = channelSlidersCollection.firstIndex(of: sender) {
             channelValuesCollection[sliderChannel].text = String(Int(channelSlidersCollection[sliderChannel].value))
             DMXController.channelValueSet(channelIndex: ((channelGroup * 16) + (sliderChannel + 1)), channelValue: Int(channelSlidersCollection[sliderChannel].value))
-           
+            var data: [Int] = []
             // Send the instruction type
-            var data = 1
-            var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
-            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            data.append(1)
+            //var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            //peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
             
             // Send the channel
-             data = ((channelGroup * 16) + (sliderChannel + 1))
-             intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
-            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            data.append(((channelGroup * 16) + (sliderChannel + 1)))
+            //intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            //peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
             
             // Send it
-            data = Int(channelSlidersCollection[sliderChannel].value)
-            intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
-            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
-
+            data.append(Int(channelSlidersCollection[sliderChannel].value))
+           // intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
+            //peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            
+            for stuff in 0...2 {
+                BLETransmission(data: data[stuff])
+            }
         }
     }
     
@@ -186,7 +186,10 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             DMXController.updateScene(index: scene!)
             saveButtonOnOff.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
             scceneSelection[scene!].backgroundColor = #colorLiteral(red: 1, green: 0.6238600496, blue: 0, alpha: 1)
-            var data = 4
+            BLETransmission(data: 4)
+            BLETransmission(data: 1)
+            BLETransmission(data: scene!)
+            /*var data = 4
             var intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
             peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
             data = 1
@@ -194,7 +197,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
             data = scene!
             intData = Data(bytes: &data, count: MemoryLayout.size(ofValue: data))
-            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+            peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse) */
 
         } else {
             var values: [Int] = DMXController.getSceneChannelValues(sceneID: scene!)
@@ -221,5 +224,10 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
             }
         }
     }
+    
+    func BLETransmission(data: Int) {
+        var value = data
+        let intData = Data(bytes: &value, count: MemoryLayout.size(ofValue: value))
+        peripheralArduinoDMX?.writeValue(intData, for: characteristicRX!, type: CBCharacteristicWriteType.withoutResponse)
+    }
 }
-
